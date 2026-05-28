@@ -3,16 +3,16 @@
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
-  // Decorative elements
-  const trees = [
-    { left: '5%', bottom: '0', size: '80px', delay: 0 },
-    { left: '15%', bottom: '0', size: '100px', delay: 0.5 },
-    { right: '5%', bottom: '0', size: '90px', delay: 0.3 },
-    { right: '18%', bottom: '0', size: '70px', delay: 0.8 },
+  // Decorative maze walls
+  const walls = [
+    { left: '3%', bottom: '0', size: '80px', delay: 0, emoji: '🧱' },
+    { left: '12%', bottom: '0', size: '100px', delay: 0.3, emoji: '🧱' },
+    { right: '3%', bottom: '0', size: '90px', delay: 0.2, emoji: '🧱' },
+    { right: '14%', bottom: '0', size: '70px', delay: 0.6, emoji: '🧱' },
   ];
 
   return (
-    <div className="relative min-h-screen landing-bg flex items-center justify-center">
+    <div className="relative min-h-screen landing-bg flex items-center justify-center overflow-hidden">
       {/* Animated clouds */}
       <motion.div
         animate={{ x: ['-10%', '110%'] }}
@@ -45,22 +45,22 @@ export default function HeroSection() {
         ☀️
       </motion.div>
 
-      {/* Trees */}
-      {trees.map((tree, i) => (
+      {/* Maze walls */}
+      {walls.map((wall, i) => (
         <motion.div
           key={i}
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: tree.delay, duration: 0.8 }}
+          transition={{ delay: wall.delay, duration: 0.8 }}
           className="absolute text-6xl"
           style={{
-            left: tree.left,
-            right: tree.right,
-            bottom: tree.bottom,
-            fontSize: tree.size,
+            left: wall.left,
+            right: wall.right,
+            bottom: wall.bottom,
+            fontSize: wall.size,
           } as React.CSSProperties}
         >
-          🌳
+          {wall.emoji}
         </motion.div>
       ))}
 
@@ -73,14 +73,14 @@ export default function HeroSection() {
         transition={{ duration: 3, repeat: Infinity }}
         className="absolute bottom-24 left-[30%] text-5xl"
       >
-        🪨
+        🐿️
       </motion.div>
       <motion.div
         animate={{ y: [0, -10, 0], rotate: [0, 15, -15, 0] }}
         transition={{ duration: 2.5, repeat: Infinity }}
         className="absolute bottom-20 right-[25%] text-4xl"
       >
-        💎
+        ⭐
       </motion.div>
 
       {/* Treasure chest */}
@@ -89,7 +89,7 @@ export default function HeroSection() {
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-4 left-1/2 -translate-x-1/2 text-6xl"
       >
-        🧰
+        🏆
       </motion.div>
 
       {/* Birds */}
@@ -114,9 +114,9 @@ export default function HeroSection() {
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            🏆 TRUY TÌM
+            🏆 THÁM HIỂM
             <br />
-            <span className="text-yellow-300">KHO BÁU</span>
+            <span className="text-yellow-300">MÊ CUNG</span>
             <br />
             <span className="text-amber-200 text-3xl sm:text-4xl md:text-5xl">
               MLN131
@@ -128,11 +128,22 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-white/90 font-body text-lg sm:text-xl mb-8 max-w-md mx-auto"
+          className="text-white/90 font-body text-lg sm:text-xl mb-3 max-w-lg mx-auto"
         >
-          Khám phá thế giới Xác suất & Thống kê
+          Thử thách kiến thức <strong>Chương 6</strong>:
           <br />
-          qua hành trình đào kho báu thú vị!
+          Vấn đề dân tộc và tôn giáo trong thời kỳ
+          <br />
+          quá độ lên chủ nghĩa xã hội
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="text-white/60 font-body text-sm mb-8 max-w-md mx-auto"
+        >
+          Điều khiển 🐿️ vượt mê cung, trả lời câu hỏi ⭐ để mở đường và tìm 🏆!
         </motion.p>
 
         {/* Scroll indicator */}

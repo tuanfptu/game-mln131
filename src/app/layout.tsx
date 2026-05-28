@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Truy Tìm Kho Báu MLN131 - Game Học Tập',
+  title: 'Thám Hiểm Mê Cung MLN131 - Game Học Tập',
   description:
-    'Web game thử thách học tập môn Xác suất Thống kê MLN131. Trả lời câu hỏi, đào kho báu và đạt điểm cao!',
-  keywords: ['MLN131', 'game', 'kho báu', 'xác suất', 'thống kê', 'FPT'],
+    'Web game thử thách kiến thức Chương 6: Vấn đề dân tộc và tôn giáo trong thời kỳ quá độ lên CNXH. Vượt mê cung, trả lời câu hỏi và chinh phục kho báu!',
+  keywords: ['MLN131', 'game', 'mê cung', 'dân tộc', 'tôn giáo', 'CNXH', 'FPT'],
   authors: [{ name: 'MLN131 Team' }],
 };
 
