@@ -41,7 +41,7 @@ export interface GameState {
 
 export interface BoardCell {
   id: number;
-  type: 'empty' | 'bush' | 'star' | 'gem' | 'miner';
+  type: 'empty' | 'bush' | 'star' | 'treasure' | 'miner';
   revealed: boolean;
   row: number;
   col: number;

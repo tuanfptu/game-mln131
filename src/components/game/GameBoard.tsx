@@ -52,7 +52,7 @@ export default function GameBoard({
         {cells.map((cell) => {
           const adjacent = isAdjacent(cell.row, cell.col);
           const isMiner = cell.type === 'miner';
-          const isGem = cell.type === 'gem';
+          const isGem = cell.type === 'treasure';
           const isBush = cell.type === 'bush';
           const isStar = cell.type === 'star';
 

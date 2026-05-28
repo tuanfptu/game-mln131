@@ -111,7 +111,7 @@ export function useGameState(): UseGameStateReturn {
       }
 
       // 1. Move to Gem (Victory!)
-      if (targetCell.type === 'gem') {
+      if (targetCell.type === 'treasure') {
         const updatedBoard = prev.boardItems.map((cell) => {
           if (cell.row === row && cell.col === col) {
             return { ...cell, type: 'empty' as const };

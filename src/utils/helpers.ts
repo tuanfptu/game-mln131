@@ -67,13 +67,13 @@ export function generateBoard(): BoardCell[] {
       const row = Math.floor(i / 8);
       const col = i % 8;
       
-      // Start is miner (0,0), End is gem (7,7)
+      // Start is miner (0,0), End is treasure (7,7)
       if (row === 0 && col === 0) {
         cells.push({ id: i, type: 'miner', revealed: true, row, col });
         continue;
       }
       if (row === 7 && col === 7) {
-        cells.push({ id: i, type: 'gem', revealed: true, row, col });
+        cells.push({ id: i, type: 'treasure', revealed: true, row, col });
         continue;
       }
 
@@ -90,7 +90,7 @@ export function generateBoard(): BoardCell[] {
       cells.push({
         id: i,
         type,
-        revealed: type === 'bush' || type === 'gem' || type === 'miner',
+        revealed: type === 'bush' || type === 'miner',
         row,
         col,
       });
@@ -119,7 +119,7 @@ export function generateBoard(): BoardCell[] {
     const col = i % 8;
     let type: BoardCell['type'] = 'empty';
     if (row === 0 && col === 0) type = 'miner';
-    else if (row === 7 && col === 7) type = 'gem';
+    else if (row === 7 && col === 7) type = 'treasure';
     else if ((row + col) % 2 === 1) type = 'star'; // checkerboard stars
 
     cells.push({
@@ -165,8 +165,8 @@ export function getCellEmoji(type: BoardCell['type']): string {
       return '🌳';
     case 'star':
       return '⭐';
-    case 'gem':
-      return '💎';
+    case 'treasure':
+      return '🏆';
     case 'miner':
       return '🐿️';
     case 'empty':
