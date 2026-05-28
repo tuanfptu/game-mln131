@@ -90,7 +90,7 @@ export function generateBoard(): BoardCell[] {
       cells.push({
         id: i,
         type,
-        revealed: type === 'bush' || type === 'miner',
+        revealed: true,
         row,
         col,
       });
