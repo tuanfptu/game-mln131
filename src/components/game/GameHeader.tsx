@@ -33,10 +33,10 @@ export default function GameHeader({ player, station }: GameHeaderProps) {
             </motion.div>
             <div>
               <h1 className="font-game text-lg text-amber-300">
-                Câu hỏi {stationNum}/{TOTAL_STATIONS}
+                Trạm 1 — Câu {stationNum}/{TOTAL_STATIONS}
               </h1>
               <p className="text-amber-100/80 text-sm font-body truncate max-w-[250px] sm:max-w-none">
-                {station ? station.title : 'Đang tìm đường đến đích... 💎'}
+                {station ? station.title : 'Đang tìm đường đến đích... 🏆'}
               </p>
             </div>
           </div>

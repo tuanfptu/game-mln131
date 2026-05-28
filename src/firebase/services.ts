@@ -103,7 +103,11 @@ export async function completeGame(
 // ============ STATION FUNCTIONS ============
 
 export async function getStation(stationNumber: number): Promise<Station | null> {
-  // First try Firestore
+  // Use local mock data first for instant loading
+  const mockStation = MOCK_STATIONS.find(s => s.stationNumber === stationNumber);
+  if (mockStation) return mockStation;
+
+  // Fallback to Firestore only if local data is missing
   try {
     const q = query(
       collection(db, 'stations'),
@@ -126,12 +130,10 @@ export async function getStation(stationNumber: number): Promise<Station | null>
       };
     }
   } catch (error) {
-    console.warn('Firestore station fetch failed, using mock data:', error);
+    console.warn('Firestore station fetch failed:', error);
   }
 
-  // Fallback to mock data
-  const mockStation = MOCK_STATIONS.find(s => s.stationNumber === stationNumber);
-  return mockStation || null;
+  return null;
 }
 
 export async function getAllStations(): Promise<Station[]> {

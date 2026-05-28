@@ -2,19 +2,13 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 import HeroSection from '@/components/landing/HeroSection';
 import RegistrationForm from '@/components/landing/RegistrationForm';
-import { createPlayer, ensureStationsSeeded } from '@/firebase/services';
+import { createPlayer } from '@/firebase/services';
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-
-  // Auto-seed questions in background if they are missing
-  useEffect(() => {
-    ensureStationsSeeded().catch(console.error);
-  }, []);
 
   const handleSubmit = async (
     name: string,

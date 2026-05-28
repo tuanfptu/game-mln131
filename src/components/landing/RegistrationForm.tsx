@@ -60,7 +60,7 @@ export default function RegistrationForm({
           {/* Decorative corner elements */}
           <div className="absolute top-2 left-3 text-2xl opacity-40">🌿</div>
           <div className="absolute top-2 right-3 text-2xl opacity-40">🌿</div>
-          <div className="absolute bottom-2 left-3 text-2xl opacity-40">💎</div>
+          <div className="absolute bottom-2 left-3 text-2xl opacity-40">🏆</div>
           <div className="absolute bottom-2 right-3 text-2xl opacity-40">🪙</div>
 
           {/* Header */}
